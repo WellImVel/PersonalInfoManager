@@ -23,5 +23,6 @@ Although this code works in the console, it can be adapted for use in graphical 
 
 7. Personal projects
 The program can be used in personal projects to manage information, create notes, or keep a diary where the user needs to enter and store text data.
+
 8. Integration with other systems
 The code can be integrated into more complex systems such as CRM (customer relationship management systems), where user data collection and analysis is required.

@@ -2,7 +2,6 @@
                             !!!Important!!!!!
       I don't use this code for personal purposes, it's just a practical matter!!.
                                    
-I don't use this code for personal purposes, it's just a practical matter!!.
 This code can be used for various purposes related to processing user information and text data. Here are some application examples:
 
 1. Collecting and formatting personal information

@@ -1,0 +1,52 @@
+using System;
+using System.IO;
+using System.Text;
+
+class Program
+{
+    static void Main()
+    {
+        Console.OutputEncoding = Encoding.UTF8; // Sets the encoding for the console
+
+        Console.Write("Enter your full name: ");  // 1. Working with strings
+        string fullName = Console.ReadLine();
+        
+        Console.Write("Enter your date of birth (dd.MM.yyyy): ");
+        string birthDate = Console.ReadLine();
+
+        string formattedOutput = $"Full Name: {fullName.Trim()}, Date of Birth: {birthDate.Trim()}";
+        Console.WriteLine(formattedOutput); // Formats and displays the result
+
+        string filePath = "data.txt";  // 2. Working with files
+        CountWordsInFile(filePath);
+
+        CalculateDaysUntilEndOfYear(); // 3. Working with date and time
+    }
+
+    static void CountWordsInFile(string filePath)
+    {
+        try
+        {
+            using (StreamReader reader = new StreamReader(filePath, Encoding.UTF8)) // Uses using for safe file opening and sets UTF-8 encoding
+            {
+                string content = reader.ReadToEnd();
+                string[] words = content.Split(new char[] { ' ', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+                int wordCount = words.Length;
+                Console.WriteLine($"Number of words in the file '{filePath}': {wordCount}");
+            }
+        }
+        catch (FileNotFoundException)
+        {
+            Console.WriteLine($"File '{filePath}' not found.");
+        }
+    }
+
+    static void CalculateDaysUntilEndOfYear()
+    {
+        DateTime currentDate = DateTime.Now;  // Gets the current date
+        DateTime endOfYear = new DateTime(currentDate.Year, 12, 31);  // Calculates the end of the year
+        int daysUntilEndOfYear = (endOfYear - currentDate).Days; // Calculates the number of days until the end of the year
+
+        Console.WriteLine($"Number of days until the end of the current year: {daysUntilEndOfYear}");
+    }
+}
